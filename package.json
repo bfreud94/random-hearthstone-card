@@ -1,0 +1,25 @@
+{
+  "name": "random-hearthstone-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec babel-node index.js",
+    "start": "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env index.js"
+  },
+  "author": "Benjamin Freudman",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "blizzapi": "^2.1.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "node-fetch": "^3.1.0",
+    "nodemon": "^2.0.15",
+    "now": "^21.0.1"
+  }
+}
