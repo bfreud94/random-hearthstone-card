@@ -15,7 +15,14 @@ app.get('/', async (_, res) => {
     const totalPageEntries = getTotalPageEntries(page)
     const cardNumber = getCardNumber(totalPageEntries)
 
-    const { cards } = await (await fetch(getHearthstoneCardUrl(access_token, page))).json()
+    const { cards } = await (await fetch(getHearthstoneCardUrl(access_token, page),
+		{
+			headers: {
+				'Authorization': `Bearer ${access_token}`,
+				'Content-Type': 'application/json'
+			}
+		}
+	)).json()
     const { image } = cards[cardNumber]
 
     res.set('Content-Type', 'text/html')
